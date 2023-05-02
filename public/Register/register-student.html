@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Page</title>
+  <link rel="stylesheet" href="register-student.css">
+  <script src="register-student.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="../Register/register-landlord.html">Register as Landlord</a></li>
+      <li><a href="../Main/index.html">Home</a></li>
+      <li><a href="../Login/login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Student Registration Page</h1>
+  </header>
+
+  <main>
+    <form id="registration-form" onsubmit="return false">
+
+      <div class="form-fields">
+        <div class="student-fields">
+          <h3>Student Registration Form</h3>
+
+          <label for="name_s" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="name_s" name="name_s">
+
+          <label for="email_s" class="form-label">Email:</label>
+          <input type="email" id="email_s" name="email_s" class="form-control">
+
+          <label for="address_s" class="form-label">Address:</label>
+          <input type="text" id="address_s" name="address_s" class="form-control">
+
+          <label for="phone_s" class="form-label">Phone Number:</label>
+          <input type="number" id="phone_s" name="phone_s" class="form-control">
+
+          <label for="gender_s" class="form-label">Gender:</label>
+          <input type="text" id="gender_s" name="gender_s" class="form-control">
+
+          <label for="age_s" class="form-label">Age:</label>
+          <input type="number" id="age_s" name="age_s" class="form-control">
+
+          <label for="password_s" class="form-label">Password:</label>
+          <input type="password" id="password_s" name="password_s" class="form-control">
+          
+          <button type="submit">Register as Student</button>
+        </div>
+      </div>
+
+      <div role="alert" id="err_R" class="alert alert-danger" style="display: none"></div>
+      <div role="alert" id="Sucz_R" class="alert alert-success" style="display: none"></div>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Registration Student Page</p>
+  </footer>
+
+</body>
+
+</html>

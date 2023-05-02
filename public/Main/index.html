@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Accommodation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <style>
+    /* General styles */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Styles for the navbar */
+  .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #333;
+	color: white;
+	padding: 20px 30px;
+  }
+  
+  .logo a {
+	color: white;
+	font-size: 32px;
+	text-decoration: none;
+  }
+  
+  .menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+  }
+  
+  .menu li {
+	margin-left: 30px;
+  }
+  
+  .menu li:first-child {
+	margin-left: 0;
+  }
+  
+  .menu a {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+  }
+  
+  .menu a:hover {
+	text-decoration: underline;
+  }
+  
+  /* Styles for the intro section */
+  .intro {
+	background-image: url('../images/home.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+  }
+  
+  .intro h1 {
+	font-size: 45px;
+	margin-bottom: 40px;
+  }
+  
+  .intro p {
+	font-size:32px;
+	display: inline-block;
+	line-height: 1.5;
+	max-width: 700px;
+	margin-bottom: 40px;
+  }
+
+  /* Styles for the section */
+.features {
+	background-color: #f8f8f8;
+	padding: 50px 0;
+  }
+  
+  .containeraa {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  /* Styles for the feature items */
+  .feature-item {
+	width: 65%;
+	margin: 20px;
+	padding: 40px;
+	background-color: rgb(186, 206, 248);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+  }
+  
+  .feature-item h3 {
+	font-size: 28px;
+	margin-bottom: 20px;
+  }
+  
+  .feature-item p {
+	font-size: 18px;
+	line-height: 1.5;
+	color: #666;
+  }
+  
+  
+  /* Styles for the call to action section */
+  .call-to-action {
+	background-color: #d0b0b0;
+	text-align: center;
+	padding: 50px 0;
+  }
+  
+  .call-to-action h2 {
+	font-size: 36px;
+	margin-bottom: 20px;
+  }
+  
+  .cta-button {
+	display: inline-block;
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 18px;
+	transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+	background-color: #555;
+  }
+  
+  /* Styles for the footer */
+  .footer {
+	background-color: #333;
+	color: white;
+	padding: 20px 30px;
+	text-align: center;
+  }
+  
+  .footer p {
+	margin: 0;
+	font-size: 14px;
+  }
+  
+  .footer a {
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+  }
+  
+  .footer a:hover {
+	text-decoration: underline;
+  }
+  </style>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">Dorm Finder</a>
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="../Register/register-student.html">Register as Student</a>
+          </li>
+          <li>
+            <a href="../Register/register-landlord.html"
+              >Register as Landlord</a
+            >
+          </li>
+          <li><a href="../Login/login.html">Login</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="intro">
+      <div class="intro-content">
+        <h1>Welcome to Student Accommodation Website</h1>
+        <p>Here We Help you find the perfect accommodation.</p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="containeraa">
+        <div class="feature-item">
+          <h3>Accommodation Search</h3>
+          <p>
+            Our search feature allows you to find student accommodation based on
+            your preferences.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Property Listings</h3>
+          <p>
+            Landlords can list their properties on our platform to reach a wider
+            audience of potential tenants.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="call-to-action">
+      <h2>Ready to find your perfect accommodation?</h2>
+      <a href="#" class="cta-button">Get Started</a>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <p>&copy;2023 Student Accommodation Management.</p>
+    </footer>
+  </body>
+</html>

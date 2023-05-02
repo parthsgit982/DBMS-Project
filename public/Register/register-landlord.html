@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Landlord Registration Page</title>
+  <link rel="stylesheet" href="register-landlord.css">
+  <script src="register-landlord.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="../Register/register-student.html">Register as Student</a></li>
+      <li><a href="../Main/index.html">Home</a></li>
+      <li><a href="../Login/login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Landlord Registration Page</h1>
+  </header>
+
+  <main>
+    <form id="registration-form" onsubmit="return false" >
+
+      <div class="form-fields">
+        <div class="landlord-fields">
+
+          <h3>Landlord Registration Form</h3>
+
+          <label for="name_l">Name:</label>
+          <input type="text" id="name_l" name="name_l">
+
+          <label for="email_l">Email:</label>
+          <input type="email" id="email_l" name="email_l">
+
+          <label for="property_type">Property Type:</label>
+          <input type="text" id="property_type" name="property_type">
+
+          <label for="address_l">Rental Address:</label>
+          <input type="text" id="address_l" name="address_l">
+
+          <label for="phone_l">Phone Number:</label>
+          <input type="number" id="phone_l" name="phone_l">
+
+          <label for="password_l">Password:</label>
+          <input type="password" id="password_l" name="password_l">
+          
+          <button type="submit">Register as Landlord</button>
+        </div>
+      </div>
+
+      <div role="alert" id="err_R" class="alert alert-danger" style="display: none"></div>
+      <div role="alert" id="Sucz_R" class="alert alert-success" style="display: none"></div>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Registration Landlord Page</p>
+  </footer>
+
+</body>
+
+</html>

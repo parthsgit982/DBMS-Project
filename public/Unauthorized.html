@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unauthorized Access</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 50px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Unauthorized Access to Dashboard Route</h1>
+    <button id="myButton">Log In</button>
+
+    <script>
+      const button = document.getElementById("myButton");
+
+      button.addEventListener("click", function () {
+        fetch("/unauthLogin", {
+          headers: { Accept: "text/css" },
+        })
+          .then((response) => {
+            if (response.ok) {
+              window.location.href = "http://localhost:3000/unauthLogin";
+            }
+          })
+          .catch((error) => console.error(error));
+      });
+    </script>
+  </body>
+</html>

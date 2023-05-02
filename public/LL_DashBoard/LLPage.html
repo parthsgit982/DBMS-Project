@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandLord Add Property</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: #344a72;
+        font-family: sans-serif;
+    }
+
+    .signup-box {
+        width: 700px;
+        height: 1045px;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        background-color: white;
+        border-radius: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    h4 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    form {
+        width: 700px;
+        margin-left: 20px;
+    }
+
+    form label {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .basic input {
+        width: 660px;
+        height: 45px;
+        padding: 7px;
+        border: 1px solid gray;
+        border-radius: 6px;
+        font-size: 20px;
+        outline: none;
+    }
+    .addr {
+        margin-top: 20px;
+    }
+    .addr label {
+        display: inline-block
+    }
+
+    .addr input {
+        border: 1px solid gray;
+        border-radius: 6px;
+        width: 200px;
+        height: 45px;
+        font-size: 20px;
+        padding-left: 7px;
+    }
+
+    .submit {
+        width: 300px;
+        height: 45px;
+        display: inline-block;
+        padding: 12px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        margin-left: 180px;
+        margin-top: 20px;
+        background-color: #28a745;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .submit:hover {
+        background-color: #6f3bab;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+
+    p {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 12px; 
+    }
+
+    .para-2 {
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        margin-top: -10px;
+    }
+
+    .para-2 a {
+        color: #49c1a2;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        bottom: 0;  
+        height: 1240px;
+        left: 0;
+        background-color: #fff;
+        width: 80px;
+        overflow: hidden;
+        transition: width 0.2s linear;
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        text-align: center;
+        display: flex;
+        transition: all 0.5s ease;
+        margin: 10px 0 0 10px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+
+    .logo span {
+        font-weight: bold;
+        font-size: 18px;
+        right: 50px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        
+    }
+
+    a {
+        position: relative;
+        color: rgb(85, 83, 83);
+        font-size: 14px;
+        display: table;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .fa-solid {
+        position: relative;
+        width: 70px;
+        height: 40px;
+        top: 14px;
+        right: 5px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .nav-item {
+        position: relative;
+        top: 13px;
+        margin: auto;
+    }
+
+    a:hover {
+        background-color: #eee;
+    }
+
+    nav:hover {
+        width: 280px;
+        transition: all 0.5s ease;
+    }
+
+    .logout {
+        position: absolute;
+        bottom: 0;
+    }
+
+    select {
+        font-size: 18px;
+        background-color: #f4f5f9;
+        border-style: solid;
+        border-width: 1px;
+        margin-top: 5px;
+        padding-left: 5px;
+        padding-right: 575px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    input.addr[type='text'] {
+        width: 100px;
+    }
+
+    #area_input {
+        margin-left: 5px;
+        margin-right: 100px;
+    }
+
+    #city_input {
+        margin-left: 5px;
+    }
+
+    ::placeholder {
+        color: #8c8e8d;
+    }
+
+    .alert {
+        padding: 17px;
+        margin-top: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        display: none;
+      }
+
+      .alert-danger {
+        background-color: #e68484;
+        color: #090909;
+      }
+
+      .alert-success {
+        background-color: #82bd6b;
+        color: #0d0e0d;
+      }
+      .allert {
+        margin-top: 30px;
+      }
+    </style>
+
+</head>
+<body>
+
+  <!-- LandLord Add Property Form -->
+    <div class="signup-box">
+        <h1>Add a new property</h1>
+        <h4>It's free and only takes a minute</h4>
+
+        <form>
+
+            <div class="basic">
+            <label>Name of your property</label>
+            <input type="text" placeholder="Enter the name of your property">
+            <label>Type of property</label>
+            <select name="prop_type" id="prop">
+                <option value="hostel">Hostel</option>
+                <option value="pg">pg</option>
+                <option value="flat">Flat</option>
+            </select>
+            <label>Rent</label>
+            <input type="text" pattern="[0-9]+" placeholder="Enter the rent">
+            <label>Property Phone number</label>
+            <input type="tel" placeholder="Enter the phone number of your property">
+            <label>Food availability</label>
+            <input type="text" placeholder="Is food available?(Enter 'Yes' or 'No')">
+            <label>Rules</label>
+            <input type="text" placeholder="Enter the rules that should be followed">
+            <label>Amenities</label>
+            <input type="text" placeholder="Enter the amenities provided">
+            <label>Additional information</label>
+            <input type="text" placeholder="Eg: Additional information such as security, CCTV etc.">
+            <label>Address</label>
+            <input type="text" placeholder="Enter the address">
+            </div>
+
+            <div class="addr">
+                <label>Area</label>
+                <input type="text" id="area_input" placeholder="Enter Area">
+                <label>City</label>
+                <input type="text" id="city_input" placeholder="Enter City">
+            </div>    
+            <button class="submit" type="submit">Submit</button>
+
+        </form>
+
+        <div class="allert">
+            <div role="alert" id="err_LL" class="alert alert-danger"style="display: none"></div>
+            <div role="alert" id="Sucz_LL" class="alert alert-success" style="display: none"></div>
+        </div>
+    </div>
+
+    <!-- Side-Bar -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <img src="brian-babb-XbwHrt87mQ0-unsplash.jpg" alt=""> 
+                    <span class="nav-item">RoomHunt</span>
+                </a>
+            </li>
+            <li><a href="">
+                <i class="fa-solid fa-house"></i>
+                <span class="nav-item">Your properties</span>
+            </a></li>
+            <li><a href="">
+                <i class="fa-solid fa-plus"></i>
+                <span class="nav-item">Add property</span>      
+            </a></li>
+            <li><a href="">
+                <i class="fa-solid fa-user"></i>
+                <span class="nav-item">Profile</span>
+            </a></li>
+            <li><a href="/logout_user">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="nav-item">Log out</span>
+            </a></li>
+            <li><a href="">
+                <i class="fa-solid fa-question"></i>
+                <span class="nav-item">Help</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <script>
+    const add_property_form = document.querySelector('.signup-box form');
+
+    add_property_form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const data = {
+        Property_Name: add_property_form.querySelector('input[placeholder="Enter the name of your property"]').value,
+        Property_Type: add_property_form.querySelector('#prop').value,
+        Rent: add_property_form.querySelector('input[placeholder="Enter the rent"]').value,
+        Phone: add_property_form.querySelector('input[placeholder="Enter the phone number of your property"]').value,
+        Food_Availability: add_property_form.querySelector('input[placeholder="Is food available?(Enter \'Yes\' or \'No\')"]').value,
+        Rules: add_property_form.querySelector('input[placeholder="Enter the rules that should be followed"]').value,
+        Amenities: add_property_form.querySelector('input[placeholder="Enter the amenities provided"]').value,
+        Additional_Info: add_property_form.querySelector('input[placeholder="Eg: Additional information such as security, CCTV etc."]').value,
+        Address: add_property_form.querySelector('input[placeholder="Enter the address"]').value,
+        Area: add_property_form.querySelector('#area_input').value,
+        City: add_property_form.querySelector('#city_input').value,
+    };
+
+    await fetch('http://localhost:3000/api_1/add_prop', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status == "error_LL") {
+            Sucz_LL.style.display = "none";
+            err_LL.style.display = "block";
+            err_LL.innerText = data.error;
+        } else {
+            err_LL.style.display = "none";
+            Sucz_LL.style.display = "block";
+            Sucz_LL.innerText = data.success;
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
