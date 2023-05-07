@@ -13,6 +13,12 @@ router.get('/Dashboard_Stud',RouteAuth,(req,res)=>{
 router.get('/Dashboard_LL',RouteAuth,(req,res)=>{
     res.sendFile('LLPage.html',{root: './public/LL_Dashboard/'});
 });
+router.get('/Dashboard_Stud',RouteAuth,(req,res)=>{
+    res.sendFile('studPage.html',{root: './public/Stud_Dashboard/'});
+});
+router.get('/Props_LL',RouteAuth,(req,res)=>{
+    res.sendFile('Props.html',{root: './public/LL_Dashboard/'});
+});
 router.get('/logout_user',logout);
 router.get('/unauthorized_route',unauthRoute);
 router.get('/unauthLogin',unauthLogin);

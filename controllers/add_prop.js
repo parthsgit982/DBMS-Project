@@ -10,7 +10,6 @@ const addProp = async (req,res)=>{
             else {landLord_ID = decoded_token.id;}
         });
 
-    console.log(landLord_ID)
     const {Property_Name, Property_Type, Rent, Phone, Food_Availability, Rules, Amenities, Additional_Info, Address, Area, City} = req.body;
     if(!Property_Name || !Property_Type || !Rent || !Phone  || !Rules|| !Address || !Area || !City){
     return res.json({status:'error_LL', error:'Please Enter All the Fields!!!'});
@@ -25,7 +24,6 @@ const addProp = async (req,res)=>{
                 DB.query('SELECT City_id from city where City_name=?',[City],async(errr,resultt)=>{
                     if(errr){throw errr;}
                     else{
-                        console.log(resultt);
                         CityID = resultt;
                         const query = `INSERT INTO ${Property_Type} SET ?`;
                         const values = {
@@ -40,7 +38,8 @@ const addProp = async (req,res)=>{
                             Amenities: Amenities,
                             Description: Additional_Info,
                             Rules:Rules,
-                            Food_availability:Food_Availability
+                            Food_availability:Food_Availability,
+                            City_Name:City
                         }
                         DB.query(query,values,
                         (err2,result2)=>{

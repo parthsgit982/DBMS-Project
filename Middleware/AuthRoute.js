@@ -9,7 +9,6 @@ const RouteAuth = (req,res,next)=>{
                 res.redirect('/unauthorized_route');
             }
                 else {
-                    console.log('HELLLLL');
                     console.log(decoded_token);
                     console.log(decoded_token.id);
                     next();

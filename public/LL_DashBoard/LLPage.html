@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LandLord Add Property</title>
+    <title>LandLord User</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -235,20 +235,20 @@
         font-size: 20px;
         text-align: center;
         display: none;
-      }
+        }
 
-      .alert-danger {
+        .alert-danger {
         background-color: #e68484;
         color: #090909;
-      }
+        }
 
-      .alert-success {
+        .alert-success {
         background-color: #82bd6b;
         color: #0d0e0d;
-      }
-      .allert {
+        }
+        .allert {
         margin-top: 30px;
-      }
+        }
     </style>
 
 </head>
@@ -263,27 +263,27 @@
 
             <div class="basic">
             <label>Name of your property</label>
-            <input type="text" placeholder="Enter the name of your property">
+            <input type="text" id="prop_name" placeholder="Enter the name of your property">
             <label>Type of property</label>
-            <select name="prop_type" id="prop">
+            <select name="prop_type" id="prop_type">
                 <option value="hostel">Hostel</option>
                 <option value="pg">pg</option>
                 <option value="flat">Flat</option>
             </select>
             <label>Rent</label>
-            <input type="text" pattern="[0-9]+" placeholder="Enter the rent">
+            <input type="text" id="proprent" pattern="[0-9]+" placeholder="Enter the rent">
             <label>Property Phone number</label>
-            <input type="tel" placeholder="Enter the phone number of your property">
+            <input type="tel" id="prophone" placeholder="Enter the phone number of your property">
             <label>Food availability</label>
-            <input type="text" placeholder="Is food available?(Enter 'Yes' or 'No')">
+            <input type="text" id="propfood" placeholder="Is food available?(Enter 'Yes' or 'No')">
             <label>Rules</label>
-            <input type="text" placeholder="Enter the rules that should be followed">
+            <input type="text" id="proprules" placeholder="Enter the rules that should be followed">
             <label>Amenities</label>
-            <input type="text" placeholder="Enter the amenities provided">
+            <input type="text" id="propamen" placeholder="Enter the amenities provided">
             <label>Additional information</label>
-            <input type="text" placeholder="Eg: Additional information such as security, CCTV etc.">
+            <input type="text" id="propaddin" placeholder="Eg: Additional information such as security, CCTV etc.">
             <label>Address</label>
-            <input type="text" placeholder="Enter the address">
+            <input type="text" id="propaddress" placeholder="Enter the address">
             </div>
 
             <div class="addr">
@@ -307,11 +307,11 @@
         <ul>
             <li>
                 <a href="#" class="logo">
-                    <img src="brian-babb-XbwHrt87mQ0-unsplash.jpg" alt=""> 
+                    <img src="../brian-babb-XbwHrt87mQ0-unsplash.jpg" alt=""> 
                     <span class="nav-item">RoomHunt</span>
                 </a>
             </li>
-            <li><a href="">
+            <li><a href="http://localhost:3000/Props_LL">
                 <i class="fa-solid fa-house"></i>
                 <span class="nav-item">Your properties</span>
             </a></li>
@@ -339,17 +339,18 @@
 
     add_property_form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    console.log('dqe');
 
     const data = {
-        Property_Name: add_property_form.querySelector('input[placeholder="Enter the name of your property"]').value,
-        Property_Type: add_property_form.querySelector('#prop').value,
-        Rent: add_property_form.querySelector('input[placeholder="Enter the rent"]').value,
-        Phone: add_property_form.querySelector('input[placeholder="Enter the phone number of your property"]').value,
-        Food_Availability: add_property_form.querySelector('input[placeholder="Is food available?(Enter \'Yes\' or \'No\')"]').value,
-        Rules: add_property_form.querySelector('input[placeholder="Enter the rules that should be followed"]').value,
-        Amenities: add_property_form.querySelector('input[placeholder="Enter the amenities provided"]').value,
-        Additional_Info: add_property_form.querySelector('input[placeholder="Eg: Additional information such as security, CCTV etc."]').value,
-        Address: add_property_form.querySelector('input[placeholder="Enter the address"]').value,
+        Property_Name: add_property_form.querySelector('#prop_name').value,
+        Property_Type: add_property_form.querySelector('#prop_type').value,
+        Rent: add_property_form.querySelector('#proprent').value,
+        Phone: add_property_form.querySelector('#prophone').value,
+        Food_Availability: add_property_form.querySelector('#propfood').value,
+        Rules: add_property_form.querySelector('#proprules').value,
+        Amenities: add_property_form.querySelector('#propamen').value,
+        Additional_Info: add_property_form.querySelector('#propaddin').value,
+        Address: add_property_form.querySelector('#propaddress').value,
         Area: add_property_form.querySelector('#area_input').value,
         City: add_property_form.querySelector('#city_input').value,
     };
