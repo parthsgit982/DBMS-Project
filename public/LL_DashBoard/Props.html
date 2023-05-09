@@ -90,6 +90,7 @@
                 <th>Address</th>
                 <th>Area</th>
                 <th>Food Service</th>
+                <th>Contact</th>
             </thead>
             <tbody></tbody>
         </table>
@@ -106,7 +107,7 @@
         function loadHTMLtable(data){
             const table = document.querySelector('table tbody');
             if(data.length === 0){
-                return table.innerHTML = `<tr><td class='no-data' colspan='8'>No Data</td></tr>`;
+                return table.innerHTML = `<tr><td class='no-data' colspan='9'>No Data</td></tr>`;
             }
             let tableHTML = "";
             data.forEach(({Name,Type,Rent,Phone,Address,Area,Food_availability,City_Name}) => {
@@ -119,6 +120,7 @@
                 tableHTML += `<td>${Address}</td>`;
                 tableHTML += `<td>${Area}</td>`;
                 tableHTML += `<td>${Food_availability}</td>`;
+                tableHTML += `<td><button id="ping-btn">Ping</button></td>`;
                 tableHTML += `<tr>`;
             });
             table.innerHTML = tableHTML;
