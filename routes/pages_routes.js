@@ -19,6 +19,12 @@ router.get('/Dashboard_Stud',RouteAuth,(req,res)=>{
 router.get('/Props_LL',RouteAuth,(req,res)=>{
     res.sendFile('Props.html',{root: './public/LL_Dashboard/'});
 });
+router.get('/likedd',RouteAuth,(req,res)=>{
+    res.sendFile('liked.html',{root: './public/Stud_Dashboard/'});
+});
+router.get('/home',RouteAuth,(req,res)=>{
+    res.sendFile('studPage.html',{root: './public/Stud_Dashboard/'});
+});
 router.get('/logout_user',logout);
 router.get('/unauthorized_route',unauthRoute);
 router.get('/unauthLogin',unauthLogin);

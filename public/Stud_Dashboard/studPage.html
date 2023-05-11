@@ -1,164 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student User</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        outline: none;
-        border: none;
-        text-decoration: none;
-        box-sizing: border-box;
-        font-family: sans-serif;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student User</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #344a72;
+      font-family: sans-serif;
+    }
+
+    p {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 12px;
+    }
+
+    .para-2 {
+      text-align: center;
+      color: white;
+      font-size: 15px;
+      margin-top: -10px;
+    }
+
+    .para-2 a {
+      color: #49c1a2;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 1240px;
+      left: 0;
+      background-color: #fff;
+      width: 80px;
+      overflow: hidden;
+      transition: width 0.2s linear;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      text-align: center;
+      display: flex;
+      transition: all 0.5s ease;
+      margin: 10px 0 0 10px;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: bold;
+      font-size: 18px;
+      right: 50px;
+      padding-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    a {
+      position: relative;
+      color: rgb(85, 83, 83);
+      font-size: 14px;
+      display: table;
+      width: 300px;
+      padding: 10px;
+    }
+
+    .fa-solid {
+      position: relative;
+      width: 70px;
+      height: 40px;
+      top: 14px;
+      right: 5px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .nav-item {
+      position: relative;
+      top: 13px;
+      margin: auto;
+    }
+
+    a:hover {
+      background-color: #eee;
+    }
+
+    nav:hover {
+      width: 280px;
+      transition: all 0.5s ease;
+    }
+
+    .logout {
+      position: absolute;
+      bottom: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .banner {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner-img.jpg") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: 430px 430px;
+    }
+
+    .card-img {
+      background: url("card-img.jpg") center/cover no-repeat;
+    }
+
+    .banner h2 {
+      padding-bottom: 40px;
+      margin-bottom: 20px;
+    }
+
+    .card-content {
+      background: #fff;
+      height: 330px;
+    }
+
+    .card-content h3 {
+      text-align: center;
+      color: #000;
+      padding: 25px 0 10px 0;
+      font-size: 26px;
+      font-weight: 500;
+    }
+
+    .form-row {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    form select,
+    form input {
+      display: block;
+      width: 100%;
+      margin: 15px 12px;
+      padding: 5px;
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #eee;
+      font-weight: 300;
+    }
+
+    form input[type=text],
+    form input::placeholder,
+    select {
+      color: #777676;
+    }
+
+    form input[type=submit] {
+      color: #fff;
+      background: #197dd4;
+      padding: 12px 0;
+      padding-left: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 80%;
+      margin: auto;
+      margin-top: 10px;
+    }
+
+    form input[type=submit]:hover {
+      opacity: 0.9;
+    }
+
+    @media(max-width: 992px) {
+      .card-container {
+        grid-template-columns: 100%;
+        width: 100vw;
       }
 
-      body {
-        background-color: #344a72;
-        font-family: sans-serif;
+      .card-img {
+        height: 330px;
       }
+    }
+  </style>
+</head>
 
-      p {
-        text-align: center;
-        padding-top: 20px;
-        font-size: 12px;
-      }
+<body>
 
-      .para-2 {
-        text-align: center;
-        color: white;
-        font-size: 15px;
-        margin-top: -10px;
-      }
+  <section class="banner">
+    <h2>LOOKING FOR HOSTELS, PGs OR FLATS?
+      <br>
+      FIND THEM HERE!
+    </h2>
+    <div class="card-container">
+      <div class="card-img">
 
-      .para-2 a {
-        color: #49c1a2;
-      }
+      </div>
 
-      nav {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        height: 1240px;
-        left: 0;
-        background-color: #fff;
-        width: 80px;
-        overflow: hidden;
-        transition: width 0.2s linear;
-        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-      }
+      <div class="card-content">
+        <h3>Select your preferences</h3>
+        <form>
+          <div class="form-row">
+            <select name="city_name">
+              <option value="city">City</option>
+              <option value="Pune">Pune</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Nashik">Nashik</option>
 
-      .logo {
-        text-align: center;
-        display: flex;
-        transition: all 0.5s ease;
-        margin: 10px 0 0 10px;
-      }
+            </select>
 
-      .logo img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-      }
+            <select name="accommodation_type">
+              <option value="accommodation">Accommodation Type</option>
+              <option value="Hostel">Hostel</option>
+              <option value="PG">PG</option>
+              <option value="Flat">Flat</option>
 
-      .logo span {
-        font-weight: bold;
-        font-size: 18px;
-        right: 50px;
-        padding-bottom: 20px;
-        text-transform: uppercase;
-      }
+            </select>
 
-      a {
-        position: relative;
-        color: rgb(85, 83, 83);
-        font-size: 14px;
-        display: table;
-        width: 300px;
-        padding: 10px;
-      }
-
-      .fa-solid {
-        position: relative;
-        width: 70px;
-        height: 40px;
-        top: 14px;
-        right: 5px;
-        font-size: 20px;
-        text-align: center;
-      }
-
-      .nav-item {
-        position: relative;
-        top: 13px;
-        margin: auto;
-      }
-
-      a:hover {
-        background-color: #eee;
-      }
-
-      nav:hover {
-        width: 280px;
-        transition: all 0.5s ease;
-      }
-
-      .logout {
-        position: absolute;
-        bottom: 0;
-      }
-      h1 {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-
-      <h1>STUDENT DASHBOARD PAGE</h1>
+          </div>
 
 
-    <!-- Side-Bar -->
-    <nav>
-      <ul>
-        <li>
-          <a href="#" class="logo">
-            <img src="../brian-babb-XbwHrt87mQ0-unsplash.jpg" alt="" />
-            <span class="nav-item">RoomHunt</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://localhost:3000/Props_LL">
-            <i class="fa-solid fa-house"></i>
-            <span class="nav-item">Available Properties</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-user"></i>
-            <span class="nav-item">Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="/logout_user">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span class="nav-item">Log out</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-question"></i>
-            <span class="nav-item">Help</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </body>
+          <div class="form-row">
+            <select name="room_type">
+              <option value="room">Room Type</option>
+              <option value="single">Single</option>
+              <option value="double">Double sharing</option>
+              <option value="triple">Triple sharing</option>
+              <option value="more">More than 3</option>
+
+              <div class="form-row">
+
+                <input type="text" pattern="[0-9]+" placeholder="Max Rent">
+
+              </div>
+
+              <div class="form-row">
+                <input type="submit" value="SEARCH">
+              </div>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Side-Bar -->
+  <nav>
+    <ul>
+      <li>
+        <a href="http://localhost:3000/home" class="logo">
+          <img src="../brian-babb-XbwHrt87mQ0-unsplash.jpg" alt="" />
+          <span class="nav-item">RoomHunt</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:3000/Props_LL">
+          <i class="fa-solid fa-house"></i>
+          <span class="nav-item">Available Properties</span>
+        </a>
+      </li>
+      <li><a href="http://localhost:3000/likedd">
+        <i class="fa-solid fa-heart"></i>
+        <span class="nav-item">Properties you liked</span>      
+    </a></li>
+      <li>
+        <a href="">
+          <i class="fa-solid fa-user"></i>
+          <span class="nav-item">Profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="/logout_user">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span class="nav-item">Log out</span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa-solid fa-question"></i>
+          <span class="nav-item">Help</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</body>
+
 </html>
